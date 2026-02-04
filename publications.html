@@ -206,13 +206,56 @@
             padding: 30px 20px;
             margin-top: 60px;
         }
+    /* CORRECTED ICON SIZING & ALIGNMENT */
+    .icon {
+        width: 1em;            /* Scales icon to the current font size */
+        height: 1em;           /* Keeps icon square */
+        fill: currentColor;    /* Icon takes the color of the text/link */
+        vertical-align: -0.15em; /* Aligns the icon perfectly with the text baseline */
+        display: inline-block;
+    }
+
+    .publication .links {
+        margin-top: 15px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .publication .links a {
+        display: inline-flex;  /* Ensures icon and text stay on one line */
+        align-items: center;   /* Centers icon and text vertically */
+        gap: 6px;              /* Space between icon and word (e.g., "Paper") */
+        color: var(--secondary);
+        text-decoration: none;
+        font-size: 0.85rem;    /* slightly smaller for a professional look */
+        padding: 4px 12px;
+        border: 1px solid var(--secondary);
+        border-radius: 20px;   /* Pill shape */
+        transition: all 0.3s ease;
+        line-height: 1;        /* Prevents the icon from increasing button height */
+    }
+
+    .publication .links a:hover {
+        background: var(--secondary);
+        color: white;
+    }
     </style>
 </head>
 <body>
+    <svg style="display: none;">
+            <symbol id="icon-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+            </symbol>
+            <symbol id="icon-link" viewBox="0 0 16 16">
+                <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+            </symbol>
+        </svg>
     <nav>
             <nav>
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">VKY</a>
+            <a href="index.html" class="nav-logo">Vijaya Krishna Yalavarthi</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="publications.html" class="active">Publications</a></li>
@@ -230,7 +273,7 @@
 
     <div class="container">
         
-        <h2>Forthcoming</h2>
+<!--         <h2>Forthcoming</h2>
         <div class="publication">
             <h3>Reliable Probabilistic Forecasting of Irregular Time Series through Marginalization-Consistent Flows</h3>
             <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Randolf Scholz, Christian Klötergens, Kiran Madhusudhanan, Stefan Born, Lars Schmidt-Thieme</p>
@@ -238,7 +281,8 @@
             <div class="links">
                 <a href="publications/Yalavarthi2026_ICLR.pdf" target="_blank">PDF</a>
             </div>
-        </div>
+        </div> 
+-->
 
         <!-- <h2>ournal Articles</h2> -->
 <!--         <div class="publication">
@@ -251,12 +295,33 @@
         </div>
  -->
         <h2>Conference Papers</h2>
+
+        <div class="publication">
+            <h3>Reliable Probabilistic Forecasting of Irregular Time Series through Marginalization-Consistent Flows</h3>
+            <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Randolf Scholz, Christian Klötergens, Kiran Madhusudhanan, Stefan Born, Lars Schmidt-Thieme</p>
+            <p class="journal">The Fourteenth International Conference on Learning Representations (ICLR), 2026</p>
+            <div class="links">
+                <a href="https://openreview.net/pdf?id=awWi4hJI7O" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-link"></use></svg> Paper
+                </a> 
+                <a href="https://github.com/yalavarthivk/seperable_flows" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-github"></use></svg> Code
+                </a>
+            </div>
+        </div>
+
         <div class="publication">
             <h3>TabResFlow: A Normalizing Spline Flow Model for Probabilistic Univariate Tabular Regression</h3>
             <p class="authors">Kiran Madhusudhanan, <strong>Vijaya Krishna Yalavarthi</strong>, Jonas Sonntag, Maximilian Stubbemann, Lars Schmidt-Thieme</p>
             <p class="journal">28th European Conference on Artificial Intelligence (ECAI), 2025</p>
             <div class="links">
-                <a href="https://arxiv.org/abs/2508.17056" target="_blank">arXiv</a>
+                <a href="https://arxiv.org/abs/2508.17056" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-link"></use></svg> Paper
+                </a> 
+                <a href="https://github.com/yalavarthivk/seperable_flows" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-github"></use></svg> Code
+                </a>
+                <!-- <a href="https://arxiv.org/abs/2508.17056" target="_blank">arXiv</a> -->
             </div>
         </div>
 
@@ -265,7 +330,13 @@
             <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Randolf Scholz, Stefan Born, Lars Schmidt-Thieme</p>
             <p class="journal">Proceedings of the AAAI Conference on Artificial Intelligence, 2025</p>
             <div class="links">
-                <a href="publications/Yalavarthi2025_AAAI.pdf" target="_blank">PDF</a>
+                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/35494" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-link"></use></svg> Paper
+                </a> 
+                <a href="https://github.com/yalavarthivk/ProFITi" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-github"></use></svg> Code
+                </a>
+                <a href="https://arxiv.org/pdf/2402.06293" target="_blank">arXiv</a>
             </div>
         </div>
 
@@ -273,6 +344,14 @@
             <h3>Physiome-ODE: A Benchmark for Irregularly Sampled Multivariate Time-Series Forecasting Based on Biological ODEs</h3>
             <p class="authors">Christian Klötergens, <strong>Vijaya Krishna Yalavarthi</strong>, Randolf Scholz, Maximilian Stubbemann, Stefan Born, Lars Schmidt-Thieme</p>
             <p class="journal">The Thirteenth International Conference on Learning Representations (ICLR), 2025</p>
+            <div class="links">
+                <a href="https://openreview.net/pdf?id=6ouZaBzeNO" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-link"></use></svg> Paper
+                </a> 
+                <a href="https://github.com/kloetergensc/Physiome-ODE" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-github"></use></svg> Code
+                </a>
+            </div>
         </div>
 
         <div class="publication">
@@ -280,7 +359,7 @@
             <p class="authors">Nourhan Ahmed, <strong>Vijaya Krishna Yalavarthi</strong>, Lars Schmidt-Thieme</p>
             <p class="journal">Proceedings of the AAAI Conference on Artificial Intelligence, 2025</p>
             <div class="links">
-                <a href="publications/Ahmed2025_AAAI.pdf" target="_blank">PDF</a>
+                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/33241" target="_blank"><svg class="icon"><use xlink:href="#icon-link"></use></svg> Paper</a>
             </div>
         </div>
 
@@ -289,7 +368,13 @@
             <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Kiran Madhusudhanan, Randolf Scholz, Nourhan Ahmed, Johannes Burchert, Shayan Jawed, Stefan Born, Lars Schmidt-Thieme</p>
             <p class="journal">Proceedings of the AAAI Conference on Artificial Intelligence, 2024</p>
             <div class="links">
-                <a href="publications/Yalavarthi2024_AAAI.pdf" target="_blank">PDF</a>
+                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/35494" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-link"></use></svg> Paper
+                </a> 
+                <a href="https://github.com/yalavarthivk/GraFITi" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-github"></use></svg> Code
+                </a>
+                <a href="https://arxiv.org/pdf/2305.12932" target="_blank">arXiv</a>
             </div>
         </div>
 
@@ -298,8 +383,11 @@
             <p class="authors">Christian Klötergens, <strong>Vijaya Krishna Yalavarthi</strong>, Maximilian Stubbemann, Lars Schmidt-Thieme</p>
             <p class="journal">Joint European Conference on Machine Learning and Knowledge Discovery in Databases (ECML-PKDD), 2024</p>
             <div class="links">
-                <a href="https://doi.org/10.1007/978-3-031-70359-1_25" target="_blank">DOI</a>
-                <a href="publications/Klotergens2024_ECML.pdf" target="_blank">PDF</a>
+                <a href="https://github.com/kloetergensc/Functional-Latent_Dynamics" target="_blank"><svg class="icon"><use xlink:href="#icon-github"></use></svg> Code
+                </a>
+                <a href="https://arxiv.org/pdf/2405.03582" target="_blank">
+                    arXiv
+                </a> 
             </div>
         </div>
 
@@ -308,7 +396,10 @@
             <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Johannes Burchert, Lars Schmidt-Thieme</p>
             <p class="journal">2023 IEEE International Conference on Big Data (BigData), 2023</p>
             <div class="links">
-                <a href="publications/Yalavarthi2023_BigData.pdf" target="_blank">PDF</a>
+                <a href="https://github.com/yalavarthivk/tripletformer" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-github"></use></svg> Code
+                </a>
+                <a href="https://arxiv.org/pdf/2210.02091" target="_blank">arXiv</a>
             </div>
         </div>
 
@@ -317,7 +408,7 @@
             <p class="authors">Shayan Jawed, Kiran Madhusudhanan, <strong>Vijaya Krishna Yalavarthi</strong>, Lars Schmidt-Thieme</p>
             <p class="journal">2023 International Joint Conference on Neural Networks (IJCNN), 2023</p>
             <div class="links">
-                <a href="publications/Jawed2023_IJCNN.pdf" target="_blank">PDF</a>
+                <a href="https://arxiv.org/pdf/2307.09796" target="_blank">arXiv</a>
             </div>
         </div>
 
@@ -326,14 +417,24 @@
             <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Johannes Burchert, Lars Schmidt-Thieme</p>
             <p class="journal">2022 IEEE 9th International Conference on Data Science and Advanced Analytics (DSAA), 2022</p>
             <div class="links">
-                <a href="publications/Yalavarthi2022_DSAA.pdf" target="_blank">PDF</a>
+                <a href="https://github.com/yalavarthivk/dcsf" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-github"></use></svg> Code
+                </a>
+                <a href="https://arxiv.org/pdf/2208.11374" target="_blank">arXiv</a>
             </div>
         </div>
 
         <div class="publication">
             <h3>Open Set Recognition for Time Series Classification</h3>
             <p class="authors">Tolga Akar, Thorben Werner, <strong>Vijaya Krishna Yalavarthi</strong>, Lars Schmidt-Thieme</p>
-            <p class="journal">Advances in Knowledge Discovery and Data Mining, 2022</p>
+            <p class="journal">Pacific-Asia Conference on Knowledge Discovery and Data Mining, 2022</p>
+            <div class="links">
+                <a href="https://github.com/tolgaakar/Open-Set-Recognition-for-Time-Series-Classification?tab=readme-ov-file" target="_blank">
+                    <svg class="icon"><use xlink:href="#icon-github"></use></svg> Code
+                </a>
+                <a href="https://github.com/tolgaakar/Open-Set-Recognition-for-Time-Series-Classification/blob/main/OSRforTSC_Paper.pdf" target="_blank"> <svg class="icon"><use xlink:href="#icon-link"></use></svg> Paper
+                </a>
+            </div>
         </div>
 
         <div class="publication">
@@ -341,7 +442,7 @@
             <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Josif Grabocka, Hareesh Mandalapu, Lars Schmidt-Thieme</p>
             <p class="journal">2019 International Conference of the Biometrics Special Interest Group (BIOSIG), 2019</p>
             <div class="links">
-                <a href="publications/Yalavarthi2019_BIOSIG.pdf" target="_blank">PDF</a>
+                <a href="https://dl.gi.de/server/api/core/bitstreams/daab013f-6313-49ce-aaf4-25cb74159697/content" target="_blank"><svg class="icon"><use xlink:href="#icon-link"></use></svg> Paper</a>
             </div>
         </div>
 
@@ -349,6 +450,9 @@
             <h3>Steering Top-k Influencers in Dynamic Graphs via Local Updates</h3>
             <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Arijit Khan</p>
             <p class="journal">2018 IEEE International Conference on Big Data (Big Data), 2018</p>
+            <div class="links">
+                <a href="https://arxiv.org/abs/1802.00574" target="_blank">arXiv</a>
+            </div>
         </div>
 
         <div class="publication">
@@ -356,7 +460,7 @@
             <p class="authors">Xiangyu Ke, Michelle Teo, Arijit Khan, <strong>Vijaya Krishna Yalavarthi</strong></p>
             <p class="journal">Proceedings of the VLDB Endowment, 2018</p>
             <div class="links">
-                <a href="publications/Ke2018_VLDB.pdf" target="_blank">PDF</a>
+                <a href="https://www.vldb.org/pvldb/vol11/p1922-ke.pdf" target="_blank"><svg class="icon"><use xlink:href="#icon-link"></use></svg> Paper</a>
             </div>
         </div>
 
@@ -366,7 +470,7 @@
             <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Xiangyu Ke, Arijit Khan</p>
             <p class="journal">Proceedings of the 2017 ACM on Conference on Information and Knowledge Management (CIKM), 2017</p>
             <div class="links">
-                <a href="publications/Yalavarthi2017_CIKM.pdf" target="_blank">PDF</a>
+                <a href="https://dl.acm.org/doi/epdf/10.1145/3132847.3132876" target="_blank"><svg class="icon"><use xlink:href="#icon-link"></use></svg> Paper</a>
             </div>
         </div>
 
@@ -375,7 +479,7 @@
             <p class="authors">Meng Joo Er, <strong>Vijaya Krishna Yalavarthi</strong>, Ning Wang, Rajasekar Venkatesan</p>
             <p class="journal">Advances in Neural Networks -- ISNN 2016, 2016</p>
             <div class="links">
-                <a href="publications/Er2016_ISNN.pdf" target="_blank">PDF</a>
+                <a href="https://www.researchgate.net/profile/Vijaya-Krishna-Yalavarthi/publication/304702526_A_Novel_Incremental_Class_Learning_Technique_for_Multi-class_Classification/links/5bcd9c91299bf17a1c662a54/A-Novel-Incremental-Class-Learning-Technique-for-Multi-class-Classification.pdf" target="_blank">PDF</a>
             </div>
         </div>
 
