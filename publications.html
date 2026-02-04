@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Vijaya Krishna Yalavarthi</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #0f3460;
+            --accent: #e94560;
+            --light: #f8f9fa;
+            --text: #2d3436;
+            --text-light: #636e72;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            margin-top: 40px;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .publication {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .publication:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .publication h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .publication .authors {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .publication .authors strong {
+            color: var(--primary);
+        }
+
+        .publication .journal {
+            color: var(--accent);
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .publication .links {
+            margin-top: 10px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .publication .links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 5px 15px;
+            border: 1px solid var(--secondary);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .publication .links a:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .scholar-link {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .scholar-link a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+            <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">VKY</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="publications.html" class="active">Publications</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    </nav>
+
+    <div class="page-header">
+        <h1>Publications</h1>
+    </div>
+
+    <div class="container">
+        
+        <h2>Forthcoming</h2>
+        <div class="publication">
+            <h3>Reliable Probabilistic Forecasting of Irregular Time Series through Marginalization-Consistent Flows</h3>
+            <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Randolf Scholz, Christian Klötergens, Kiran Madhusudhanan, Stefan Born, Lars Schmidt-Thieme</p>
+            <p class="journal">The Fourteenth International Conference on Learning Representations (ICLR), 2026</p>
+            <div class="links">
+                <a href="publications/Yalavarthi2026_ICLR.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+
+        <!-- <h2>ournal Articles</h2> -->
+<!--         <div class="publication">
+            <h3>A Demonstration of Perc: Probabilistic Entity Resolution with Crowd Errors</h3>
+            <p class="authors">Xiangyu Ke, Michelle Teo, Arijit Khan, <strong>Vijaya Krishna Yalavarthi</strong></p>
+            <p class="journal">Proceedings of the VLDB Endowment, 2018</p>
+            <div class="links">
+                <a href="publications/Ke2018_VLDB.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+ -->
+        <h2>Conference Papers</h2>
+        <div class="publication">
+            <h3>TabResFlow: A Normalizing Spline Flow Model for Probabilistic Univariate Tabular Regression</h3>
+            <p class="authors">Kiran Madhusudhanan, <strong>Vijaya Krishna Yalavarthi</strong>, Jonas Sonntag, Maximilian Stubbemann, Lars Schmidt-Thieme</p>
+            <p class="journal">28th European Conference on Artificial Intelligence (ECAI), 2025</p>
+            <div class="links">
+                <a href="https://arxiv.org/abs/2508.17056" target="_blank">arXiv</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>Probabilistic Forecasting of Irregularly Sampled Time Series with Missing Values via Conditional Normalizing Flows</h3>
+            <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Randolf Scholz, Stefan Born, Lars Schmidt-Thieme</p>
+            <p class="journal">Proceedings of the AAAI Conference on Artificial Intelligence, 2025</p>
+            <div class="links">
+                <a href="publications/Yalavarthi2025_AAAI.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>Physiome-ODE: A Benchmark for Irregularly Sampled Multivariate Time-Series Forecasting Based on Biological ODEs</h3>
+            <p class="authors">Christian Klötergens, <strong>Vijaya Krishna Yalavarthi</strong>, Randolf Scholz, Maximilian Stubbemann, Stefan Born, Lars Schmidt-Thieme</p>
+            <p class="journal">The Thirteenth International Conference on Learning Representations (ICLR), 2025</p>
+        </div>
+
+        <div class="publication">
+            <h3>Motif-Aware Graph Neural Networks for Networked Time Series Imputation</h3>
+            <p class="authors">Nourhan Ahmed, <strong>Vijaya Krishna Yalavarthi</strong>, Lars Schmidt-Thieme</p>
+            <p class="journal">Proceedings of the AAAI Conference on Artificial Intelligence, 2025</p>
+            <div class="links">
+                <a href="publications/Ahmed2025_AAAI.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>Grafiti: Graphs for Forecasting Irregularly Sampled Time Series</h3>
+            <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Kiran Madhusudhanan, Randolf Scholz, Nourhan Ahmed, Johannes Burchert, Shayan Jawed, Stefan Born, Lars Schmidt-Thieme</p>
+            <p class="journal">Proceedings of the AAAI Conference on Artificial Intelligence, 2024</p>
+            <div class="links">
+                <a href="publications/Yalavarthi2024_AAAI.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>Functional Latent Dynamics for Irregularly Sampled Time Series Forecasting</h3>
+            <p class="authors">Christian Klötergens, <strong>Vijaya Krishna Yalavarthi</strong>, Maximilian Stubbemann, Lars Schmidt-Thieme</p>
+            <p class="journal">Joint European Conference on Machine Learning and Knowledge Discovery in Databases (ECML-PKDD), 2024</p>
+            <div class="links">
+                <a href="https://doi.org/10.1007/978-3-031-70359-1_25" target="_blank">DOI</a>
+                <a href="publications/Klotergens2024_ECML.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>Tripletformer for Probabilistic Interpolation of Irregularly Sampled Time Series</h3>
+            <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Johannes Burchert, Lars Schmidt-Thieme</p>
+            <p class="journal">2023 IEEE International Conference on Big Data (BigData), 2023</p>
+            <div class="links">
+                <a href="publications/Yalavarthi2023_BigData.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>Forecasting Early with Meta Learning</h3>
+            <p class="authors">Shayan Jawed, Kiran Madhusudhanan, <strong>Vijaya Krishna Yalavarthi</strong>, Lars Schmidt-Thieme</p>
+            <p class="journal">2023 International Joint Conference on Neural Networks (IJCNN), 2023</p>
+            <div class="links">
+                <a href="publications/Jawed2023_IJCNN.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>DCSF: Deep Convolutional Set Functions for Classification of Asynchronous Time Series</h3>
+            <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Johannes Burchert, Lars Schmidt-Thieme</p>
+            <p class="journal">2022 IEEE 9th International Conference on Data Science and Advanced Analytics (DSAA), 2022</p>
+            <div class="links">
+                <a href="publications/Yalavarthi2022_DSAA.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>Open Set Recognition for Time Series Classification</h3>
+            <p class="authors">Tolga Akar, Thorben Werner, <strong>Vijaya Krishna Yalavarthi</strong>, Lars Schmidt-Thieme</p>
+            <p class="journal">Advances in Knowledge Discovery and Data Mining, 2022</p>
+        </div>
+
+        <div class="publication">
+            <h3>Gait Verification Using Deep Learning with a Pairwise Loss</h3>
+            <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Josif Grabocka, Hareesh Mandalapu, Lars Schmidt-Thieme</p>
+            <p class="journal">2019 International Conference of the Biometrics Special Interest Group (BIOSIG), 2019</p>
+            <div class="links">
+                <a href="publications/Yalavarthi2019_BIOSIG.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>Steering Top-k Influencers in Dynamic Graphs via Local Updates</h3>
+            <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Arijit Khan</p>
+            <p class="journal">2018 IEEE International Conference on Big Data (Big Data), 2018</p>
+        </div>
+
+        <div class="publication">
+            <h3>A Demonstration of Perc: Probabilistic Entity Resolution with Crowd Errors</h3>
+            <p class="authors">Xiangyu Ke, Michelle Teo, Arijit Khan, <strong>Vijaya Krishna Yalavarthi</strong></p>
+            <p class="journal">Proceedings of the VLDB Endowment, 2018</p>
+            <div class="links">
+                <a href="publications/Ke2018_VLDB.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+
+
+        <div class="publication">
+            <h3>Select Your Questions Wisely: For Entity Resolution With Crowd Errors</h3>
+            <p class="authors"><strong>Vijaya Krishna Yalavarthi</strong>, Xiangyu Ke, Arijit Khan</p>
+            <p class="journal">Proceedings of the 2017 ACM on Conference on Information and Knowledge Management (CIKM), 2017</p>
+            <div class="links">
+                <a href="publications/Yalavarthi2017_CIKM.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>A Novel Incremental Class Learning Technique for Multi-class Classification</h3>
+            <p class="authors">Meng Joo Er, <strong>Vijaya Krishna Yalavarthi</strong>, Ning Wang, Rajasekar Venkatesan</p>
+            <p class="journal">Advances in Neural Networks -- ISNN 2016, 2016</p>
+            <div class="links">
+                <a href="publications/Er2016_ISNN.pdf" target="_blank">PDF</a>
+            </div>
+        </div>
+
+<!--         <h2>Book Chapters</h2>
+        <div class="publication">
+            <h3>A Novel Incremental Class Learning Technique for Multi-class Classification</h3>
+            <p class="authors">Meng Joo Er, <strong>Vijaya Krishna Yalavarthi</strong>, Ning Wang, Rajasekar Venkatesan</p>
+            <p class="journal">Advances in Neural Networks -- ISNN 2016, 2016</p>
+            <div class="links">
+                <a href="publications/Er2016_ISNN.pdf" target="_blank">PDF</a>
+            </div>
+        </div> -->
+
+        <div class="scholar-link">
+            <p>For a complete and up-to-date list of publications, please visit:</p>
+            <br>
+            <a href="https://scholar.google.com/citations?user=9G_5ZxQAAAAJ" target="_blank">
+                📚 My Google Scholar Profile →
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Vijaya Krishna Yalavarthi. All rights reserved.</p>
+    </footer>
+</body>
+</html>

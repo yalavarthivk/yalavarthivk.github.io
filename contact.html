@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Vijaya Krishna Yalavarthi</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #0f3460;
+            --accent: #e94560;
+            --light: #f8f9fa;
+            --text: #2d3436;
+            --text-light: #636e72;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            transition: 0.3s;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-card h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            border: none;
+            padding: 0;
+        }
+
+        .contact-card .icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+        }
+
+        .contact-item strong {
+            color: var(--text);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+
+        /* Social Links */
+        .social-links {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .social-links h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--light);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid var(--secondary);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .social-button:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Map/Location Note */
+        .location-note {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.05) 0%, rgba(15, 52, 96, 0.05) 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .location-note h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">VKY</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>Get in Touch</h1>
+        <p>Feel free to reach out for collaborations or inquiries</p>
+    </div>
+
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="icon">📧</div>
+                <h2>Email</h2>
+                <div class="contact-item">
+                    <a>yalavarthi@ismll.de</a>
+                </div>
+                <!-- EDIT: Add alternative email if you have one, or remove this section -->
+<!--                 <div class="contact-item">
+                    <strong>Alternative:</strong>
+                    <a href="mailto:your.alternative@email.com">your.alternative@email.com</a>
+                </div> -->
+            </div>
+
+            <div class="contact-card">
+                <div class="icon">🏢</div>
+                <h2>Office</h2>
+                <!-- EDIT: Replace with your actual office details -->
+                <div class="contact-item">
+                    <strong>Location:</strong>
+                    C-035, Samelsonplatz 1<br>
+                    <!-- <strong>Information Systems and Machine Learning Lab:</strong> -->
+                    Information Systems & Machine Learning Lab<br>
+                    University of Hildesheim<br>
+                    
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="icon">📍</div>
+                <h2>Mailing Address</h2>
+                <!-- EDIT: Replace with your actual mailing address -->
+                <div class="contact-item">
+                    <p>
+                        University of Hildesheim<br>
+                        universitätsplatz 1<br>
+                        31141, Hildesheim<br>
+                        Germany
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <h2>Connect With Me</h2>
+            <div class="social-grid">
+                <a href="https://scholar.google.com/citations?user=9G_5ZxQAAAAJ" target="_blank" class="social-button">
+                    📚 Google Scholar
+                </a>
+                <a href="https://github.com/yalavarthivk" target="_blank" class="social-button">
+                    💻 GitHub
+                </a>
+                <!-- EDIT: Add more social links as needed -->
+                <a href="https://www.linkedin.com/in/vijaya-krishna-yalavarthi-27a4414b" target="_blank" class="social-button">
+                    💼 LinkedIn
+                </a>
+            </div>
+        </div>
+
+        <div class="location-note">
+            <h3>📍 Location</h3>
+            <p>
+                I am based at the University of Hildesheim in Hildesheim, Germany. 
+                I am available for meetings by appointment. Please email me to schedule a time.
+            </p>
+            <!-- EDIT: Add information about your availability, time zone, or preferred contact methods -->
+            <p style="margin-top: 15px;">
+                <strong>Time Zone:</strong> Central European Time (CET/CEST)<br>
+                <strong>Office Hours:</strong> "By appointment"
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Vijaya Krishna Yalavarthi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
